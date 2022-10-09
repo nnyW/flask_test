@@ -1,5 +1,7 @@
 from flask import Flask,render_template,request
-from sql_con import get_db_conection 
+from sql_con import get_db_conection
+
+
 app = Flask(__name__)
 
 
