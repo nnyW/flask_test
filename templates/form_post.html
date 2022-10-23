@@ -9,27 +9,15 @@
 </head>
 <body>
     <form action="" method="post">
+        <label for="username_id">Username</label>
+        <input type="text" name="username" id="username_id">
         <label for="firstname_id">Firstname</label>
         <input type="text" name="firstname" id="firstname_id">
         <label for="lastname_id">lastname</label>
         <input type="text" name="lastname" id="lastname_id">
+        <label for="password_id">Passname</label>
+        <input type="password" name="password" id=="password_id">
         <input type="submit" value="submit">
-    </form>
-    {% if data %}
-        <table>
-            <thead>
-                <th>Firstname</th>
-                <th>Lastname</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ data[0] }}</td>
-                    <td>{{ data[1] }}</td>
-                </tr>
-            </tbody>
-        </table>
-    {% else %}
-        <p>Not Enter Data</p>  
-    {% endif %}      
+    </form>  
 </body>
 </html>

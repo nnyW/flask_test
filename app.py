@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 from sql_con import get_db_conection
 
 
@@ -46,7 +46,13 @@ def formPOST_index():
                 print(key,value)
             Firstname = request.form.get('firstname')
             Lastname = request.form.get('lastname')
-            return render_template('form_post.html',data =[Firstname, Lastname])
+            Username = request.form.get('username')
+            Password = request.form.get('password')
+            conn = get_db_conection()
+            conn.execute('INSERT INTO user ("username","firstname","lastname","password") VALUES(?,?,?,?)',(Username, Firstname,Lastname,Password))
+            conn.commit()
+            conn.close()
+            return redirect("./form_get", code=302)
 
 
 
